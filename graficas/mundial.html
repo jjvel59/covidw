@@ -1,0 +1,119 @@
+<!doctype html>
+<html>
+
+<head>
+    <meta charset="utf-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=Edge">
+	<meta name="viewport" content="width=device-width, initial-scale=1">
+	<title>Mundial</title>
+	<link href="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/css/bootstrap.min.css" rel="stylesheet" >
+	<link href="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/css/select2.min.css" rel="stylesheet"/>
+	<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/4.7.0/css/font-awesome.min.css">
+	<link href="../css/styleCovid.css" type="text/css" rel="stylesheet">
+	
+</head>
+
+<body>
+<div class="container-fluid">    
+	<div class="card">
+		<div class="card-body">
+			<h3 class="card-header">
+				<label id="lblTitulo" >Evolución COVID-19</label>
+			</h3>
+	
+			<div class="row">
+				<div class="col-md-12  ">
+					<div class="row">
+						<div class="col-md-6">
+							<h7>
+								<label>País</label>
+							</h7>
+						</div>
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<select id="selPais" name="selPais" class="mi-selector" tabindex="2">
+								<option value=""></option>
+							  </select>
+						</div>				
+						<div class="col-md-2">			
+							<label for="Confirmados" >
+								<input type="radio" name="rdDato" value="confirmed" checked id="rdDato">
+								Confirmados
+							</label>
+						</div>		
+						<div class="col-md-2">
+							<label for="Recuperados" >
+								<input type="radio" name="rdDato" value="recovered" id="rdDato">
+								Recuperados
+							</label>			
+						</div>	
+						<div class="col-md-3">
+							<label for="Fallecidos" >
+								<input type="radio" name="rdDato" value="deaths"  id="rdDato">
+								Fallecidos
+							</label>			
+						</div>	
+					</div>
+					<div class="row">
+						<div class="col-md-5">
+							<h7>
+								<label class="checkbox-inline"><input type="checkbox" value="" id="chkMantener"> mantener dato anterior</label>
+							  </h7>			  
+						</div>
+						<div class="col-md-4">
+							<h7>
+								<label class="checkbox-inline"><input type="checkbox" value="" id="chkIncremento"> graficar incrementos diarios (ID)</label>
+							  </h7>			  
+						</div>	
+						<div class="col-md-3"> 
+							<button class="btn" id="btnClear"><i class="fa fa-history"></i></button>
+						</div>			
+					</div>
+	
+				</div>
+		
+			</div>			
+			<div class="row">		
+				<div class="col-md-12 ">
+					<canvas id="canvas" class="graph"></canvas>
+				</div>	
+			</div>
+		</div>
+		
+		<div class="row ">		
+			<div id="loader"></div>
+		</div>
+		<div class="card-footer text-muted">
+			<div class="row ">
+				<div class="col-lg-2  col-md-4">
+					<label for="lineal" >
+						<input type="radio" name="scale" value="linear" id="scale" checked>
+						Escala lineal
+					</label>				
+				</div>
+				<div class="col-lg-2 col-md-4">
+					<label for="logaritmica" >
+						<input type="radio" name="scale" value="logarithmic" id="scale">
+						Escala logaritmica
+					</label>				
+				</div>
+				<div class="col-lg-2 offset-lg-6 col-md-4 ">
+					<a href="https://github.com/pomber/covid19">Datasource</a>
+				</div>		
+			</div>
+
+		</div>
+		
+	</div>
+
+	<script type="text/javascript" src="../jquery/dist/jquery.min.js"></script>
+	<script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.4.1/js/bootstrap.min.js"></script>
+	<script src="https://cdnjs.cloudflare.com/ajax/libs/select2/4.0.6-rc.0/js/select2.min.js"></script>
+	<script src="../chart.js/dist/Chart.min.js"></script>
+    <script src="../js/utils.js"></script>
+    <script src="../js/grafScala.js"></script>
+</div>
+</body>
+
+</html>
